@@ -1,0 +1,13 @@
+prefix=c:/Users/Lenovo/OneDrive - Pamantasan ng Lungsod ng Maynila/Documents/BSCS Year 3/2nd-sem/research-writing-1/thesis-svm-tele-triage/.conda/Library
+exec_prefix=c:/Users/Lenovo/OneDrive - Pamantasan ng Lungsod ng Maynila/Documents/BSCS Year 3/2nd-sem/research-writing-1/thesis-svm-tele-triage/.conda/Library
+libdir=c:/Users/Lenovo/OneDrive - Pamantasan ng Lungsod ng Maynila/Documents/BSCS Year 3/2nd-sem/research-writing-1/thesis-svm-tele-triage/.conda/Library/lib
+sharedlibdir=c:/Users/Lenovo/OneDrive - Pamantasan ng Lungsod ng Maynila/Documents/BSCS Year 3/2nd-sem/research-writing-1/thesis-svm-tele-triage/.conda/Library/lib
+includedir=c:/Users/Lenovo/OneDrive - Pamantasan ng Lungsod ng Maynila/Documents/BSCS Year 3/2nd-sem/research-writing-1/thesis-svm-tele-triage/.conda/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
