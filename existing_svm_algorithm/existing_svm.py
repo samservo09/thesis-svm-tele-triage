@@ -22,4 +22,16 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import model_selection, naive_bayes, svm
 from sklearn.metrics import accuracy_score
 
+#set a random seed
+
+#import the data
+
 #data preprocessing
+
+#prepare train and test datasets
+
+#encoding
+
+#word vectorization
+
+#use machine learning algorithms to predict the outcome
