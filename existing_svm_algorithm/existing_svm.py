@@ -56,6 +56,7 @@ for index,entry in enumerate(Corpus['text']):
     Corpus.loc[index,'text_final'] = str(Final_words)
 
 #prepare train and test datasets
+Train_X, Test_X, Train_Y, Test_Y = model_selection.train_test_split(Corpus['text_final'],Corpus['label'],test_size=0.3)
 
 #encoding
 
