@@ -23,8 +23,10 @@ from sklearn import model_selection, naive_bayes, svm
 from sklearn.metrics import accuracy_score
 
 #set a random seed
+np.random.seed(500)
 
 #import the data
+
 
 #data preprocessing
 
