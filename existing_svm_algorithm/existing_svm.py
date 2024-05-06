@@ -9,13 +9,6 @@
 8. Performance will be evaluated with the common four indicators of accuracy rate, precision rate, recall rate and F1 value.
 """
 #necessary libraries
-import nltk
-nltk.download('wordnet')
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('omw-1.4')
-nltk.download('stopwords')
-
 import pandas as pd
 import numpy as np
 from nltk.tokenize import word_tokenize
@@ -77,5 +70,16 @@ Train_X_Tfidf = Tfidf_vect.transform(Train_X)
 Test_X_Tfidf = Tfidf_vect.transform(Test_X)
 
 print(Tfidf_vect.vocabulary_)
+print(Train_X_Tfidf)
 
 #use machine learning algorithms to predict the outcome
+
+# fit the training dataset on the classifier
+SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto')
+SVM.fit(Train_X_Tfidf,Train_Y)
+
+# predict the labels on validation dataset
+
+predictions_SVM = SVM.predict(Test_X_Tfidf)
+# Use accuracy_score function to get the accuracy
+print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, Test_Y)*100)
