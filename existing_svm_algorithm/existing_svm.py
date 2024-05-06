@@ -26,7 +26,7 @@ from sklearn.metrics import accuracy_score
 np.random.seed(500)
 
 #import the data
-
+Corpus = pd.read_csv(r"data/corpus.csv",encoding='latin-1')
 
 #data preprocessing
 
