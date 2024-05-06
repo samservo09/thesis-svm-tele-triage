@@ -9,6 +9,13 @@
 8. Performance will be evaluated with the common four indicators of accuracy rate, precision rate, recall rate and F1 value.
 """
 #necessary libraries
+import nltk
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('omw-1.4')
+nltk.download('stopwords')
+
 import pandas as pd
 import numpy as np
 from nltk.tokenize import word_tokenize
@@ -64,5 +71,11 @@ Train_Y = Encoder.fit_transform(Train_Y)
 Test_Y = Encoder.fit_transform(Test_Y)
 
 #word vectorization
+Tfidf_vect = TfidfVectorizer(max_features=5000)
+Tfidf_vect.fit(Corpus['text_final'])
+Train_X_Tfidf = Tfidf_vect.transform(Train_X)
+Test_X_Tfidf = Tfidf_vect.transform(Test_X)
+
+print(Tfidf_vect.vocabulary_)
 
 #use machine learning algorithms to predict the outcome
