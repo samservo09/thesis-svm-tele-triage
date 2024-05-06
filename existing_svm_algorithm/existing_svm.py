@@ -59,6 +59,9 @@ for index,entry in enumerate(Corpus['text']):
 Train_X, Test_X, Train_Y, Test_Y = model_selection.train_test_split(Corpus['text_final'],Corpus['label'],test_size=0.3)
 
 #encoding
+Encoder = LabelEncoder()
+Train_Y = Encoder.fit_transform(Train_Y)
+Test_Y = Encoder.fit_transform(Test_Y)
 
 #word vectorization
 
