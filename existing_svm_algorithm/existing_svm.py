@@ -9,6 +9,13 @@
 8. Performance will be evaluated with the common four indicators of accuracy rate, precision rate, recall rate and F1 value.
 """
 #necessary libraries
+import nltk
+nltk.download('wordnet')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('omw-1.4')
+nltk.download('stopwords')
+
 import pandas as pd
 import numpy as np
 from nltk.tokenize import word_tokenize
@@ -82,4 +89,4 @@ SVM.fit(Train_X_Tfidf,Train_Y)
 
 predictions_SVM = SVM.predict(Test_X_Tfidf)
 # Use accuracy_score function to get the accuracy
-print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, Test_Y)*100)
+print("SVM Accuracy Score -> ", accuracy_score(predictions_SVM, Test_Y)*100)
