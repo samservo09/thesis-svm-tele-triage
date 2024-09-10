@@ -16,6 +16,6 @@ We aim to improve the existing Support Vector Machine Algorithm for text classif
 
 ## Resources
 [Dataset Used](https://zenodo.org/records/2667859#.YCwdTR1OlQI) <br>
-[MentalBERT](https://arxiv.org/abs/2110.15621)
+[MentalBERT](https://arxiv.org/abs/2110.15621)<br>
 [SVM Algorithm from scratch - Video](https://www.youtube.com/watch?v=UX0f9BNBcsY)<br>
 [SVM Algorithm from scratch - Code](https://github.com/patrickloeber/MLfromscratch/blob/master/mlfromscratch/svm.py)<br>
