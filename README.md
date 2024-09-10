@@ -15,5 +15,5 @@ We aim to improve the existing Support Vector Machine Algorithm for text classif
 3. To avoid data piling due to the results of High-dimension, low-sample data sets.
 
 ## Resources
-[Dataset Used](https://zenodo.org/records/2667859#.YCwdTR1OlQI)
+[Dataset Used](https://zenodo.org/records/2667859#.YCwdTR1OlQI) <br>
 [MentalBERT](https://arxiv.org/abs/2110.15621)
