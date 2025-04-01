@@ -1,54 +1,64 @@
-from flask import Flask, request, jsonify
-import joblib
-import numpy as np
+import streamlit as st
+import pandas as pd
+import random
 
-app = Flask(__name__)
+# Load dataset
+df = pd.read_csv("combined-predictions.csv")
 
-# Load the trained SVM model
-model = joblib.load("svm-roberta_model.pkl")
+# Function to get a random statement
+def get_random_statement():
+    random_row = df.sample(n=1).iloc[0]  # Pick a random row
+    return random_row["Post"], random_row["Actual_Label"], random_row["S_Predicted_Label"], random_row["R_Predicted_Label"]
 
-# Define CSSR-S Questions (structured sequence)
-cssrs_questions = [
-    "Have you wished you were dead or wished you could go to sleep and not wake up?",
-    "Have you actually had any thoughts of killing yourself?",
-    "Have you been thinking about how you might do this?",
-    "Have you had these thoughts and had some intention of acting on them?",
-    "Have you started to work out or worked out the details of how to end your life?",
-    "Have you done anything, started to do anything, or prepared to do anything to end your life?"
-]
+# Function to color-code labels
+def color_label(label):
+    colors = {
+        "Attempt": "red",  # Actual Attempt (Severe)
+        "Behavior": "red",  # Suicidal Behavior (Severe)
+        "Ideation": "orange",  # Suicidal Ideation (Moderate)
+        "Indicator": "orange",  # Suicide Indicator (Moderate)
+        "Supportive": "green",  # Supportive (Low Risk)
+    }
+    return f'<span style="color:{colors.get(label, "black")}; font-weight:bold;">{label}</span>'
 
-user_responses = {}
+# Initialize session state
+if "post" not in st.session_state:
+    st.session_state.post, st.session_state.actual, st.session_state.svm_pred, st.session_state.roberta_pred = get_random_statement()
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
-    data = request.get_json()
-    
-    session_id = data['session']
-    intent = data['queryResult']['intent']['displayName']
-    user_input = data['queryResult']['queryText']
+# Streamlit UI
+st.title("🔍 Suicide Severity Risk Classification - Model Comparison")
 
-    # Track user responses
-    if session_id not in user_responses:
-        user_responses[session_id] = []
-    
-    user_responses[session_id].append(user_input)
+st.write("Click the button below to see a **random statement** with predictions from the models.")
 
-    # If all CSSR-S questions are answered, classify
-    if len(user_responses[session_id]) >= len(cssrs_questions):
-        # Convert responses into a NumPy array for classification
-        user_features = np.array(user_responses[session_id]).reshape(1, -1)
-        prediction = model.predict(user_features)[0]
+# Display the current statement
+st.write(f"### 📝 Statement: ")
+st.info(st.session_state.post)
 
-        # Clear session responses after classification
-        del user_responses[session_id]
+# Display actual and predicted labels with colors
+st.markdown(f"**✅ Actual Label:** {color_label(st.session_state.actual)}", unsafe_allow_html=True)
+st.markdown(f"**🤖 SVM Prediction:** {color_label(st.session_state.svm_pred)}", unsafe_allow_html=True)
+st.markdown(f"**🦾 RoBERTa-SVM Prediction:** {color_label(st.session_state.roberta_pred)}", unsafe_allow_html=True)
 
-        return jsonify({
-            "fulfillmentText": f"Based on your responses, your classification is: {prediction}"
-        })
-    
-    # Ask next question
-    next_question = cssrs_questions[len(user_responses[session_id])]
-    return jsonify({"fulfillmentText": next_question})
+# Button to fetch a new random statement
+if st.button("🔄 Show Another"):
+    st.session_state.post, st.session_state.actual, st.session_state.svm_pred, st.session_state.roberta_pred = get_random_statement()
+    st.rerun()  # Refresh the UI to update with new statement
 
-if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+# Legend for label meanings with color-coded text
+st.markdown("""
+### **📝 Legend: Suicide Risk Severity Labels**
+- <span style="color:red; font-weight:bold;">🟥 Actual Attempt (AT)</span> – Any deliberate action that could result in death, whether completed or not.  
+  *🔹 Next Steps:* **Seek emergency assistance immediately.**  
+
+- <span style="color:red; font-weight:bold;">🟥 Suicidal Behavior (BR)</span> – Actions with higher risk, including self-harm, active planning, or past hospitalization.  
+  *🔹 Next Steps:* **Immediate intervention is necessary. Contact crisis support services.**  
+
+- <span style="color:orange; font-weight:bold;">🟧 Suicidal Ideation (ID)</span> – Thoughts of suicide, preoccupation with risk factors (e.g., job loss, mental illness, substance abuse).  
+  *🔹 Next Steps:* **Monitor closely, offer support, and encourage professional help.**  
+
+- <span style="color:orange; font-weight:bold;">🟧 Suicide Indicator (IN)</span> – Mentions of at-risk factors (e.g., divorce, illness, loss of a loved one) without personal intent.  
+  *🔹 Next Steps:* **Keep an eye on risk factors, encourage conversations, and offer support.**  
+
+- <span style="color:green; font-weight:bold;">🟩 Supportive (SU)</span> – Engaging in discussion with no signs of personal risk, often offering help to others.  
+  *🔹 Next Steps:* **Encourage continued support and positive engagement.**  
+""", unsafe_allow_html=True)
