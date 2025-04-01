@@ -6,8 +6,6 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asgiref==3.8.1
 asttokens==2.1.0
-attrs @ file:///C:/ci_311/attrs_1676422272484/work
-Babel @ file:///C:/ci_311/babel_1676427169844/work
 backcall==0.2.0
 beautifulsoup4==4.11.1
 bio==1.7.1
@@ -15,28 +13,19 @@ biopython==1.84
 biothings-client==0.3.1
 bleach==5.0.1
 blinker==1.8.2
-boltons @ file:///C:/ci_311/boltons_1677729932371/work
 branca==0.6.0
 brotlipy==0.7.0
 bs4==0.0.1
 cachelib==0.13.0
 cachetools==5.3.3
-certifi @ file:///C:/b/abs_36eb5mzhph/croot/certifi_1690232276943/work/certifi
 cffi==1.15.1
 charset-normalizer==2.1.1
 click==8.1.7
 click-plugins==1.1.1
 cligj==0.7.2
 colorama==0.4.6
-comm @ file:///C:/ci_311/comm_1678376562840/work
-conda @ file:///C:/b/abs_91p1jzml9k/croot/conda_1690495018992/work
-conda-content-trust @ file:///C:/ci_311/conda-content-trust_1676467587370/work
-conda-libmamba-solver @ file:///C:/b/abs_5a9xvt2a3k/croot/conda-libmamba-solver_1685032355900/work/src
-conda-package-handling @ file:///C:/b/abs_ce4_vcfd0y/croot/conda-package-handling_1685024800103/work
-conda_package_streaming @ file:///C:/b/abs_88a7k_wmm1/croot/conda-package-streaming_1685019697115/work
 contourpy==1.0.6
 countryinfo==0.1.2
-cryptography @ file:///C:/ci_311/cryptography_1679419210767/work
 cycler==0.11.0
 debugpy==1.6.3
 decorator==5.1.1
@@ -69,8 +58,6 @@ google-auth-httplib2==0.2.0
 google-generativeai==0.8.3
 googleapis-common-protos==1.66.0
 gprofiler-official==1.0.0
-gradio==5.23.0
-gradio_client==1.8.0
 greenlet==2.0.2
 groovy==0.1.2
 grpcio==1.68.1
@@ -84,36 +71,22 @@ idna==3.4
 imageio==2.31.6
 importlib_metadata==8.5.0
 ipykernel==6.17.1
-ipython @ file:///C:/b/abs_d1yx5tjhli/croot/ipython_1680701887259/work
 ipython-genutils==0.2.0
 ipywidgets==8.0.2
 itsdangerous==2.2.0
 jedi==0.18.2
-Jinja2 @ file:///C:/ci_311/jinja2_1676424968965/work
 joblib==1.3.2
-json5 @ file:///tmp/build/80754af9/json5_1624432770122/work
-jsonpatch @ file:///tmp/build/80754af9/jsonpatch_1615747632069/work
 jsonpointer==2.1
-jsonschema @ file:///C:/b/abs_d40z05b6r1/croot/jsonschema_1678983446576/work
-jupyter @ file:///C:/ci_311/jupyter_1678249952587/work
 jupyter-console==6.4.4
-jupyter-server @ file:///opt/conda/conda-bld/jupyter_server_1644494914632/work
 jupyter_client==7.4.7
-jupyter_core @ file:///C:/b/abs_9d0ttho3bs/croot/jupyter_core_1679906581955/work
-jupyterlab @ file:///opt/conda/conda-bld/jupyterlab_1647445413472/work
 jupyterlab-pygments==0.2.2
-jupyterlab-server @ file:///opt/conda/conda-bld/jupyterlab_server_1644500396812/work
 jupyterlab-widgets==3.0.3
 kiwisolver==1.4.4
-libmambapy @ file:///C:/b/abs_1dshymu5qt/croot/mamba-split_1680096516212/work/libmambapy
 lightgbm==4.5.0
-lxml @ file:///C:/b/abs_c2bg6ck92l/croot/lxml_1679646459966/work
 markdown-it-py==3.0.0
-MarkupSafe @ file:///C:/ci_311/markupsafe_1676424152318/work
 matplotlib==3.6.2
 matplotlib-inline==0.1.6
 mdurl==0.1.2
-menuinst @ file:///C:/ci_311/menuinst_1678730372782/work
 mglearn==0.2.0
 mistune==2.0.4
 mpmath==1.3.0
@@ -121,12 +94,10 @@ msgspec==0.19.0
 mygene==3.2.2
 nbclassic==0.4.8
 nbclient==0.7.0
-nbconvert @ file:///C:/ci_311/nbconvert_1676425836196/work
 nbformat==5.7.0
 nest-asyncio==1.5.6
 networkx==3.2
 nltk==3.9.1
-notebook @ file:///C:/b/abs_49d8mc_lpe/croot/notebook_1681756182078/work
 notebook_shim==0.2.2
 numpy==1.26.4
 openpyxl==3.1.2
@@ -141,7 +112,6 @@ pickleshare==0.7.5
 Pillow==9.3.0
 platformdirs==2.5.4
 playwright==1.38.0
-pluggy @ file:///C:/ci_311/pluggy_1676422178143/work
 ply==3.11
 pooch==1.8.2
 preamble==0.0.4
@@ -155,7 +125,6 @@ pure-eval==0.2.2
 pyarrow==15.0.2
 pyasn1==0.6.1
 pyasn1_modules==0.4.1
-pycosat @ file:///C:/ci_311/pycosat_1676438455539/work
 pycparser==2.21
 pydantic==2.10.3
 pydantic_core==2.27.1
@@ -165,16 +134,13 @@ pyee==9.0.4
 pygame==2.5.2
 Pygments==2.13.0
 pymongo==4.10.1
-pyOpenSSL @ file:///C:/b/abs_08f38zyck4/croot/pyopenssl_1690225407403/work
 pyparsing==3.0.9
 pyproj==3.6.1
 PyQt5==5.15.7
-PyQt5-sip @ file:///C:/ci_311/pyqt-split_1676428895938/work/pyqt_sip
 PyQt6==6.5.2
 PyQt6-Qt6==6.5.2
 PyQt6-sip==13.5.2
 pyrsistent==0.19.2
-PySocks @ file:///C:/ci_311/pysocks_1676425991111/work
 python-dateutil==2.8.2
 python-multipart==0.0.20
 pytz==2022.6
@@ -185,10 +151,8 @@ pyzmq==24.0.1
 qtconsole==5.4.0
 QtPy==2.3.0
 regex==2024.11.6
-requests @ file:///C:/b/abs_316c2inijk/croot/requests_1690400295842/work
 rich==13.7.1
 rsa==4.9
-ruamel.yaml @ file:///C:/ci_311/ruamel.yaml_1676439214109/work
 ruff==0.11.2
 safehttpx==0.1.6
 safetensors==0.5.3
@@ -201,7 +165,6 @@ semantic-version==2.10.0
 Send2Trash==1.8.0
 shapely==2.0.2
 shellingham==1.5.4
-sip @ file:///C:/ci_311/sip_1676427825172/work
 six==1.16.0
 smmap==5.0.1
 sniffio==1.3.0
@@ -218,13 +181,9 @@ terminado==0.17.0
 threadpoolctl==3.2.0
 tinycss2==1.2.1
 tokenizers==0.21.0
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
 tomlkit==0.13.2
-toolz @ file:///C:/ci_311/toolz_1676431406517/work
 torch==2.6.0
 tornado==6.2
-tqdm @ file:///C:/b/abs_f76j9hg7pv/croot/tqdm_1679561871187/work
-traitlets @ file:///C:/ci_311/traitlets_1676423290727/work
 transformers==4.49.0
 trio==0.22.2
 trio-websocket==0.10.4
@@ -232,7 +191,6 @@ typer==0.15.2
 typing_extensions==4.12.2
 tzdata==2024.1
 uritemplate==4.1.1
-urllib3 @ file:///C:/b/abs_889_loyqv4/croot/urllib3_1686163174463/work
 uvicorn==0.34.0
 watchdog==4.0.0
 wcwidth==0.2.5
@@ -241,7 +199,6 @@ websocket-client==1.4.2
 websockets==15.0.1
 Werkzeug==3.0.4
 widgetsnbextension==4.0.3
-win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
 wsproto==1.2.0
 xgboost==2.0.1
 zipp==3.20.2
