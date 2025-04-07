@@ -51,27 +51,27 @@ if st.button("🔄 Show Another"):
 st.markdown("""
 ### **📝 Legend: Suicide Risk Severity Labels**
 
-<div style="background-color:#FDECEA; padding:10px; border-radius:8px; margin-bottom:10px;">
+<div style="padding:10px; border-radius:8px; margin-bottom:10px;">
 <span style="color:#D32F2F; font-weight:bold;">Attempt (AT):</span> Any deliberate action that could result in death, whether completed or not.  
 🔹 <i>Next Steps:</i> <b>Seek emergency assistance immediately.</b>
 </div>
 
-<div style="background-color:#FCE4EC; padding:10px; border-radius:8px; margin-bottom:10px;">
+<div style="padding:10px; border-radius:8px; margin-bottom:10px;">
 <span style="color:#F44336; font-weight:bold;">Behavior (BR):</span> Actions with higher risk, including self-harm, active planning, or past hospitalization.  
 🔹 <i>Next Steps:</i> <b>Immediate intervention is necessary. Contact crisis support services.</b>
 </div>
 
-<div style="background-color:#FFF3E0; padding:10px; border-radius:8px; margin-bottom:10px;">
+<div style="padding:10px; border-radius:8px; margin-bottom:10px;">
 <span style="color:#FB8C00; font-weight:bold;">Ideation (ID):</span> Thoughts of suicide, preoccupation with risk factors (e.g., job loss, mental illness, substance abuse).  
 🔹 <i>Next Steps:</i> <b>Monitor closely, offer support, and encourage professional help.</b>
 </div>
 
-<div style="background-color:#FFF8E1; padding:10px; border-radius:8px; margin-bottom:10px;">
+<div style="padding:10px; border-radius:8px; margin-bottom:10px;">
 <span style="color:#FFB74D; font-weight:bold;">Indicator (IN):</span> Mentions of at-risk factors (e.g., divorce, illness, loss of a loved one) without personal intent.  
 🔹 <i>Next Steps:</i> <b>Keep an eye on risk factors, encourage conversations, and offer support.</b>
 </div>
 
-<div style="background-color:#E8F5E9; padding:10px; border-radius:8px;">
+<div style="padding:10px; border-radius:8px;">
 <span style="color:#388E3C; font-weight:bold;">Supportive (SU):</span> Engaging in discussion with no signs of personal risk, often offering help to others.  
 🔹 <i>Next Steps:</i> <b>Encourage continued support and positive engagement.</b>
 </div>
