@@ -33,10 +33,12 @@ if "post" not in st.session_state:
 # Streamlit UI
 st.title("🔍 Suicide Severity Risk Classification - Model Comparison")
 
-st.markdown("### Simulate SOP 1 (Feature Loss): Support Vector Machine (SVM) algorithm faces a limitation in text classification tasks due to their tendency to discard essential features of textual data.")
+st.markdown("### Simulate SOP 1 (Feature Loss): ")
+st.markdown("##### Support Vector Machine (SVM) algorithm faces a limitation in text classification tasks due to their tendency to discard essential features of textual data.")
 
 # Show label distribution table
-st.markdown("### Simulate SOP 2 (Class Imbalance): The Support Vector Machine (SVM) algorithm inherently biases classification toward the majority class, resulting in poor performance on the minority class in imbalanced datasets.")
+st.markdown("### Simulate SOP 2 (Class Imbalance):")
+st.markdown("##### The Support Vector Machine (SVM) algorithm inherently biases classification toward the majority class, resulting in poor performance on the minority class in imbalanced datasets.")
 
 st.write("Click the button below to see a **random statement** with predictions from the models.")
 
@@ -59,7 +61,8 @@ label_counts.columns = ["Label", "Number of Posts"]
 
 st.dataframe(label_counts.reset_index(drop=True), use_container_width=True)
 
-st.markdown("### Simulate SOP 3 (HDLSS Data): SOP 3: The Support Vector Machine (SVM) algorithm struggles with high-dimensional, low-sample-size (HDLSS) textual data, needing improvements for better predictive performance.")
+st.markdown("### Simulate SOP 3 (HDLSS Data):")
+st.markdown("##### The Support Vector Machine (SVM) algorithm struggles with high-dimensional, low-sample-size (HDLSS) textual data, needing improvements for better predictive performance.")
 
 image1 = Image.open('svm-no-pca.png')
 st.image(image1, caption='This is a visualization of the dataset of SVM with NO PCA applied.', use_column_width=True)
