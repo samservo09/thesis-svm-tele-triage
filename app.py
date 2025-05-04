@@ -36,6 +36,33 @@ st.title("🔍 Suicide Severity Risk Classification - Model Comparison")
 st.markdown("### Simulate SOP 1 (Feature Loss): ")
 st.markdown("##### Support Vector Machine (SVM) algorithm faces a limitation in text classification tasks due to their tendency to discard essential features of textual data.")
 
+import ast
+
+# Section for SOP 1 Feature Representation Comparison
+st.markdown("##### Feature Representation Comparison for Current Post:")
+
+# Find the current row
+current_row = df[df["Post"] == st.session_state.post]
+
+if not current_row.empty:
+    tfidf_vector = ast.literal_eval(current_row["tf-idf"].values[0])
+    roberta_vector = ast.literal_eval(current_row["roberta_emb"].values[0])
+
+    # Format TF-IDF into a dataframe and show only non-zero top weights
+    tfidf_df = pd.DataFrame(tfidf_vector, columns=["Weight"]).reset_index(names=["Feature Index"])
+    tfidf_df_nonzero = tfidf_df[tfidf_df["Weight"] > 0].sort_values(by="Weight", ascending=False).head(20)
+
+    st.markdown("###### Top TF-IDF Feature Weights (Non-zero, Top 20):")
+    st.dataframe(tfidf_df_nonzero, use_container_width=True)
+
+    # Format RoBERTa vector (first 20 values for brevity)
+    roberta_df = pd.DataFrame(roberta_vector, columns=["Embedding Value"]).reset_index(names=["Index"])
+    
+    st.markdown("###### RoBERTa Embedding Vector (First 20 Dimensions):")
+    st.dataframe(roberta_df.head(20), use_container_width=True)
+else:
+    st.warning("Current post not found in the dataframe.")
+
 # Show label distribution table
 st.markdown("### Simulate SOP 2 (Class Imbalance):")
 st.markdown("##### The Support Vector Machine (SVM) algorithm inherently biases classification toward the majority class, resulting in poor performance on the minority class in imbalanced datasets.")
