@@ -40,8 +40,6 @@ st.markdown("##### Support Vector Machine (SVM) algorithm faces a limitation in 
 st.markdown("### Simulate SOP 2 (Class Imbalance):")
 st.markdown("##### The Support Vector Machine (SVM) algorithm inherently biases classification toward the majority class, resulting in poor performance on the minority class in imbalanced datasets.")
 
-st.write("Click the button below to see a **random statement** with predictions from the models.")
-
 # Display the current statement
 st.write(f"### 📝 Statement:")
 st.info(st.session_state.post)
@@ -50,6 +48,8 @@ st.info(st.session_state.post)
 st.markdown(f"**✅ Actual Label:** {color_label(st.session_state.actual)}", unsafe_allow_html=True)
 st.markdown(f"**🤖 SVM Prediction:** {color_label(st.session_state.svm_pred)}", unsafe_allow_html=True)
 st.markdown(f"**🦾 RoBERTa-SVM Prediction:** {color_label(st.session_state.roberta_pred)}", unsafe_allow_html=True)
+
+st.write("Click the button below to see a **random statement** with predictions from the models.")
 
 # Refresh to get a new statement
 if st.button("🔄 Show Another"):
