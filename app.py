@@ -7,6 +7,17 @@ from PIL import Image
 # Load dataset
 df = pd.read_csv("combined-predictions.csv")
 
+# Load dataset
+df = pd.read_csv("combined-predictions.csv")
+
+# Replace NaN vector entries with string representations of empty lists
+df["tf-idf"] = df["tf-idf"].fillna("[]")
+df["roberta_emb"] = df["roberta_emb"].fillna("[]")
+
+# Optionally: Replace empty vector strings with actual zero-vectors of fixed length
+df["tf-idf"] = df["tf-idf"].apply(lambda x: x if x != "[]" else str([0.0]*20))        # Adjust 20 if needed
+df["roberta_emb"] = df["roberta_emb"].apply(lambda x: x if x != "[]" else str([0.0]*768))  # RoBERTa typically has 768-dim
+
 # Define exact color hex codes for labels
 label_colors = {
     "Attempt": "#D32F2F",       # Deep Red
